@@ -17,5 +17,6 @@ washington.csv
 ### Credits
 This project is part of Udacity's course "Python for Data Science"
 
-
+### Course Rating
++++
 
