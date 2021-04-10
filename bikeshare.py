@@ -11,7 +11,6 @@ months = ["january", "february", "march", "april", "may", "june", "all"]
 days_of_week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"]
 df = None
 
-
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -54,7 +53,6 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
-
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -76,6 +74,7 @@ def load_data(city, month, day):
 
     return df
 
+    return df
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -103,7 +102,6 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -125,7 +123,6 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -143,7 +140,6 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -157,7 +153,7 @@ def user_stats(df):
     for i in range(len(counts_user_types.index.values)):
         print(counts_user_types.index.values[i], ' : ', list(counts_user_types)[i])
     else:
-        print("More user Type Data not available")
+        print("More user Type Data is not available")
 
     # TO DO: Display counts of gender
     counts_gender = df['Gender'].value_counts()
@@ -212,7 +208,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
