@@ -17,23 +17,23 @@ def get_filters():
     Asks user to specify a city, month, and day to analyze.
 
     Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (string) city - name of the city to analyze
+        (string) month - name of the month to filter by, or "all" to apply no month filter
+        (string) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+
     while True:
         city = input("Which data would you like to analyze: chicago, new york or washington? ").lower()
         if city in cities:
             print("alright")
         else:
             print('Looks like you made a spelling mistake - please try again')
-        break    
+        break
     else:
             print("Please select from chicago, new york, or washington")
-             
+
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input("Which month would you like to analyze- january, february, march, april, may, june or all? ").lower()
@@ -50,7 +50,7 @@ def get_filters():
         break
     else:
             print("Sorry!Please name one weekday or all")
-    
+
     print('-'*40)
     return city, month, day
 
@@ -71,9 +71,9 @@ def load_data(city, month, day):
     df = pd.DataFrame(df)
     print(city, city_file)
     print('-'*40)
-    
-    
-    
+
+
+
     return df
 
 
@@ -195,8 +195,8 @@ def display_data(df):
         print(df.iloc[start_loc:start_loc+5])
         start_loc += 5
         view_data = input('Do you wish to continue?: ').lower()
-        
-    
+
+
 
 def main():
     while True:
