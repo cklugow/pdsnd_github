@@ -11,7 +11,6 @@ months = ["january", "february", "march", "april", "may", "june", "all"]
 days_of_week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"]
 df = None
 
-
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -23,17 +22,17 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+
     while True:
         city = input("Which data would you like to analyze: chicago, new york or washington? ").lower()
         if city in cities:
             print("alright")
         else:
             print('Looks like you made a spelling mistake - please try again')
-        break    
+        break
     else:
             print("Please select from chicago, new york, or washington")
-             
+
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input("Which month would you like to analyze- january, february, march, april, may, june or all? ").lower()
@@ -50,10 +49,9 @@ def get_filters():
         break
     else:
             print("Sorry!Please name one weekday or all")
-    
+
     print('-'*40)
     return city, month, day
-
 
 def load_data(city, month, day):
     """
@@ -71,11 +69,8 @@ def load_data(city, month, day):
     df = pd.DataFrame(df)
     print(city, city_file)
     print('-'*40)
-    
-    
-    
-    return df
 
+    return df
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -103,7 +98,6 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -125,7 +119,6 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -142,7 +135,6 @@ def trip_duration_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -195,8 +187,6 @@ def display_data(df):
         print(df.iloc[start_loc:start_loc+5])
         start_loc += 5
         view_data = input('Do you wish to continue?: ').lower()
-        
-    
 
 def main():
     while True:
@@ -212,7 +202,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
