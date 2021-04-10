@@ -149,7 +149,7 @@ def user_stats(df):
     for i in range(len(counts_user_types.index.values)):
         print(counts_user_types.index.values[i], ' : ', list(counts_user_types)[i])
     else:
-        print("More user Type Data not available")
+        print("More user Type Data is not available")
 
     # TO DO: Display counts of gender
     counts_gender = df['Gender'].value_counts()
